@@ -1,0 +1,120 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #e5e5e5;
+}
+header {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  border-bottom: 2px solid #2a2a2a;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+/* Nueva estructura asimétrica */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Productos el doble de ancho */
+  gap: 35px;
+}
+
+/* Productos: card más grande */
+.card.product-card {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 18px;
+  border: 1px solid #2e2e2e;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-height: 330px; 
+}
+
+
+.card.cart-card {
+  background: #1a1a1a;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid #2e2e2e;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-height: 230px; 
+}
+
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #9b8cff;
+  font-weight: 600;
+}
+
+.product, .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #2d2d2d;
+  font-size: 16px;
+}
+
+.product:last-child,
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+button {
+  background: #6b5df2;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #5949d9;
+  transform: scale(1.07);
+}
+
+.remove-btn {
+  background: #ff4d6d;
+}
+
+.remove-btn:hover {
+  background: #d63a53;
+}
+
+.total {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #b8a7ff;
+}
+
+.footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
