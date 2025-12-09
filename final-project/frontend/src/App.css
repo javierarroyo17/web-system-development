@@ -1,0 +1,230 @@
+:root {
+  --primary: #e67e22;       /* Naranja comida */
+  --primary-hover: #d35400;
+  --secondary: #2ecc71;     /* Verde éxito */
+  --danger: #e74c3c;        /* Rojo borrar */
+  --dark: #2c3e50;          /* Texto oscuro */
+  --light: #ecf0f1;         /* Fondos claros */
+  --white: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+  --radius: 12px;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: var(--dark);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* --- Layout Principal --- */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --- Header / Navbar --- */
+.main-header {
+  background: var(--white);
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.btn-nav {
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+/* --- Botones Generales --- */
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--secondary);
+  color: white;
+}
+.btn-primary:hover { background-color: #27ae60; transform: translateY(-2px); }
+
+.btn-accent {
+  background-color: var(--primary);
+  color: white;
+}
+.btn-accent:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+
+.btn-back {
+  background: transparent;
+  color: var(--dark);
+  padding-left: 0;
+}
+.btn-back:hover { color: var(--primary); text-decoration: underline; }
+
+/* --- Grid de Recetas --- */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.recipe-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  border-bottom: 4px solid transparent;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-bottom: 4px solid var(--primary);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.category-tag {
+  background: var(--light);
+  color: var(--dark);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.recipe-title {
+  margin: 10px 0;
+  color: var(--dark);
+  font-size: 1.25rem;
+}
+
+.ingredient-preview {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* --- Botones de Acción en Card --- */
+.card-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.btn-edit { background: #f1c40f; color: white; }
+.btn-delete { background: var(--light); color: var(--danger); }
+.btn-delete:hover { background: var(--danger); color: white; }
+
+/* --- Formularios --- */
+.form-container {
+  background: var(--white);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group { margin-bottom: 20px; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+  box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* --- Detalles (Acordeón) --- */
+details summary {
+  cursor: pointer;
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 10px;
+  list-style: none; /* Quita el triángulo por defecto en algunos navegadores */
+}
+
+details[open] summary {
+  margin-bottom: 10px;
+}

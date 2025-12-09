@@ -1,0 +1,12 @@
+# Dependencias (pesan mucho y se instalan con npm install)
+node_modules/
+
+# Variables de entorno (seguridad)
+.env
+
+# Archivos de build de producción
+dist/
+
+# Logs y archivos del sistema
+*.log
+.DS_Store
